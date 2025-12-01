@@ -1,4 +1,4 @@
-# Experimental-ERC-4337-Bundler-Setup
+# Experimental ERC-4337 Bundler Setup
 Experimental setup for ERC-4337 Environment Tests used in ISEEE 2025 paper evaluation of ERC-4337 Bundler Power Consumption
 
 This is a guide for setting up an experimental playground for testing an ERC-4337 bundler.\
