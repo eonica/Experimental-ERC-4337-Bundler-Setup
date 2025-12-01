@@ -1,7 +1,7 @@
 # Experimental-ERC-4337-Bundler-Setup
 Experimental setup for ERC-4337 Environment Tests used in ISEEE 2025 paper evaluation of ERC-4337 Bundler Power Consumption
 
-This is a guide for setting up an experimental playground for testing an ERC-4337 bundler.
+This is a guide for setting up an experimental playground for testing an ERC-4337 bundler./
 It was used for monitoring a bundler for its power consumption in measurements conducted for the work in [An Introductory Study on the Power Consumption Overhead of ERC-4337 Bundlers](https://arxiv.org/abs/2511.16890) ISEEE 2025 paper. 
 It simulates a feed of ERC-4337 UserOps for transfering ERC-20 tokens between some sets of addresses, via a Bundler and all the ERC-4337 infrastructure. 
 
