@@ -23,11 +23,12 @@ Blockscout should be further started together with Anvil, for monitoring the pro
 `docker-compose -f anvil.yml up -d`
 `docker-compose down -v`
 Note that use of Blockscout is optional altogether.
+Update: [Anvil Explorer](https://github.com/sigworld/anvil-explorer) is a less problematic block explorer alternative.
 
 ## Running Anvil
 
 To run Anvil as the blockchain simulator, after installing a typical command is as follows (with persistent state storage):\
-`anvil --port 8545 --host 0.0.0.0 --chain-id 1337 --block-time 15 --gas-limit 30000000 --gas-price 1 --load-state my_state.json --dump-state my_state.json --code-size-limit 0x1000000`
+`anvil --port 8545 --host 0.0.0.0 --chain-id 1337 --block-time 15 --gas-limit 30000000 --gas-price 1 --load-state my_state.json --dump-state my_state.json --disable-code-size-limit`
 
 Parameters can be adjusted upon need. Note that that --load-state expects a state file and should be ommitted at first run. 
 
