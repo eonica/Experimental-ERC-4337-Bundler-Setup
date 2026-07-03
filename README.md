@@ -65,7 +65,7 @@ The Alto bundler requires adjusting its configuration in *alto-config.json* to m
     "fixed-gas-limit-for-estimation": "30000000",
     "bundler-initial-comission": "0",
     "block-time": 15000,
-    "gas-price-bump": 1,
+    "gas-price-bump": "1",
     "log-level": "info"
 }`
 
