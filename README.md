@@ -132,10 +132,10 @@ In order to capture the monitored consumption per process, the target processes 
 `systemd-cgls
 ls /sys/fs/cgroup`
 
-And to effectively run in transient scoped mode:\ 
-`systemd-run --scope --slice=user.slice --unit=anvil anvil --port 8545 --host 0.0.0.0 --chain-id 1337 --block-time 15 --gas-limit 45000000 --gas-price 1 --load-state my_state.json --dump-state my_state.json --code-size-limit 50000000 --silent
+And to effectively run in transient scoped mode:\
+`systemd-run --scope --slice=user.slice --unit=anvil anvil --port 8545 --host 0.0.0.0 --chain-id 1337 --block-time 15 --gas-limit 30000000 --gas-price 1 --block-base-fee-per-gas 0 --disable-min-priority-fee --load-state /var/lib/anvil/state.json --dump-state /var/lib/anvil/state.json --disable-code-size-limit --silent`
 
-systemd-run --scope --slice=user.slice --unit=alto ./alto run --config "alto-config.json" --port 3000`
+`systemd-run --scope --slice=user.slice --unit=alto ./alto run --config "alto-config.json" --port 3000`
 
 After the 1) monitoring is done, 2) is just a matter of computing the final results based on the gathered data. This can be executed in the folder where the measurements were stored with (the outputs will be stored in a *swatts* folder):\ 
 
