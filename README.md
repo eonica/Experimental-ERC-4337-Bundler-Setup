@@ -57,8 +57,10 @@ The intended use is to send ERC-20 transfers between SCAs, formed initially as E
 a) Ether to pay for the effectively executed transactions (i.e., refund the bundler that initially pays)\
 b) ERC-20 tokens to transfer between SCAs
 
-Point a) above is solved at SCA creation by transfering Ether. Further Ether can be transferred running the script *sendEtherMulti [txt file with SCA addresses] [Xether]* where X is the Ether value.\
-Point b) above is solved by running the script *sendTokenMulti [txt file with SCA addresses] [X]* where X is the token units number. Note that the ERC-20 token address must be configured in the script.\
+Point a) above is solved at SCA creation by transfering Ether. Further Ether can be transferred running the script\ 
+`sendEtherMulti [txt file with SCA addresses] [Xether]` where X is the Ether value.\
+Point b) above is solved by running the script 
+`sendTokenMulti [txt file with SCA addresses] [X]` where X is the token units number. Note that the ERC-20 token address must be configured in the script.\
 **Note:** All scripts expect 10 SCA recipients per owner Anvil test address, so 100 in total. For tuning these numbers, change the params in the scripts' internal configurations.  
 
 ## Runing Alto
