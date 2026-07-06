@@ -1,0 +1,22 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@pimlico/alto": "^0.0.19",
+    "@pimlico/mock-paymaster": "^0.0.5",
+    "get-port": "^7.1.0",
+    "permissionless": "^0.2.57",
+    "prool": "^0.0.23",
+    "viem": "2.35"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "scripts": {
+    "test": "vitest"
+  }
+}
