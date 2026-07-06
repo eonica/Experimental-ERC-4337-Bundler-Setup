@@ -123,7 +123,7 @@ Monitoring the power consumption requires two steps:
 1. Getting the raw RAPL power measurements
 2. Computing the SmartWatts accurately estimated actual power consumption per process
 
-For 1) the monitoring options are set in a *config_file.json*, like the metrics monitored, desired sampling, interval and others, which are described on the PowerAPI page.\ 
+For 1) the monitoring options are set in a *config_file.json*, like the metrics monitored, desired sampling, interval and others, which are described on the PowerAPI page. This must be placed in the directory, where the docker command below is run.\
 Then, the monitoring can be started using a command line as follows (pay attention to the docked mapping paths, this will place results in a *sensor_output* folder that should exist in the local directory):
 
 `docker run --rm  --net=host --privileged --pid=host -v /sys:/sys -v /var/lib/docker/containers:/var/lib/docker/containers:ro -v $(pwd)/sensor_output:/tmp/sensor_output -v $(pwd):/srv -v $(pwd)/config_file.json:/config_file.json powerapi/hwpc-sensor --config-file /config_file.json`
