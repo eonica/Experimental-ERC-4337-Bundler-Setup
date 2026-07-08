@@ -33,7 +33,9 @@ Update: [Anvil Explorer](https://github.com/sigworld/anvil-explorer) is a less p
 To run Anvil as the blockchain simulator, after installing a typical command is as follows (with persistent state storage):\
 `anvil --port 8545 --host 0.0.0.0 --chain-id 1337 --block-time 15 --gas-limit 30000000 --gas-price 1 --block-base-fee-per-gas 0 --disable-min-priority-fee --load-state /var/lib/anvil/state.json --dump-state /var/lib/anvil/state.json --disable-code-size-limit`
 
-Parameters can be adjusted upon need. Note that --load-state expects a state file and should be ommitted at first run. 
+Parameters can be adjusted upon need. Note that --load-state expects a state file and should be ommitted at first run.\
+Also note that TLDR: do not start Anvil with --disable-min-priority-fee when accessing via Remix, but only for scripted interaction.\
+The --disable-min-priority-fee option will not work for direct Remix interactions with the Anvil network, since Remix internally will set a priority fee, which is expected to be 0 using this option. However, this option might be necessary later for limiting burst costs when running UserOp loads via alto. 
 
 ## Deploying necessary contracts
 
