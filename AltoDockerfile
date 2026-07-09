@@ -1,0 +1,57 @@
+FROM debian:bookworm-slim
+
+WORKDIR /opt
+
+ENV NVM_DIR="/root/.nvm"
+ENV PATH="/root/.nvm/versions/node/current/bin:/root/.foundry/bin:${PATH}"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    bash \
+    git \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install latest Node.js via nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+RUN bash -lc 'source "$NVM_DIR/nvm.sh" \
+    && nvm install node \
+    && nvm alias default node \
+    && NODE_VERSION="$(nvm version default)" \
+    && ln -s "$NVM_DIR/versions/node/$NODE_VERSION" "$NVM_DIR/versions/node/current" \
+    && node --version \
+    && npm --version'
+
+# Install latest pnpm explicitly.
+RUN bash -lc 'source "$NVM_DIR/nvm.sh" \
+    && npm install -g pnpm \
+    && pnpm --version'
+
+# Install Foundry / forge.
+ENV PATH="/root/.nvm/versions/node/current/bin:/root/.foundry/bin:${PATH}"
+
+RUN curl -L https://foundry.paradigm.xyz | bash
+
+RUN /root/.foundry/bin/foundryup
+
+RUN forge --version
+
+# Clone Alto during build.
+RUN git clone https://github.com/pimlicolabs/alto.git /app
+
+WORKDIR /app
+
+COPY alto-config.json /app/alto-config.json
+
+RUN pnpm install
+
+RUN pnpm build:all
+
+EXPOSE 3000
+
+ENTRYPOINT ["./alto", "run"]
+CMD ["--config", "/app/alto-config.json"]
