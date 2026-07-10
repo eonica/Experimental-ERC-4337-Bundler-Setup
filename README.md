@@ -15,6 +15,10 @@ It uses mainly the following tools, which require installation/setup (some indic
 The current setup assumes running everything on the same machine. Therefore, localhost (127.0.0.1), is often used as address in various scripts. Replace this according to changes.\
 In particular, in a server setting, Anvil and Alto, should probably run on the server side, and deployment, transaction sending, and other operations should use the server address. 
 
+## Fast Track Deployment
+
+Please check the following for a fast track deployment: [Fast Track ERC-4337 Bundler Deployment](FastTrack.md).
+
 ## (Optional) Configuration of Blockscout
 
 Blockscout would normally require setting the configurations for *anvil* and *chain id* options, in order to monitor the simulated Anvil chain. These are normally found in the *anvil.yml*, *docker-compose.yml*, *env/common-blockscout.env* files in the Blockscout installation.\ 
