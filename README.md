@@ -17,7 +17,7 @@ In particular, in a server setting, Anvil and Alto, should probably run on the s
 
 ## Fast Track Deployment
 
-Please check the following for a fast track deployment: [Fast Track ERC-4337 Bundler Deployment](FastTrack.md).
+Please check the following for a fast track deployment: [Fast Track ERC-4337 Bundler Deployment]([FastTrack.md](https://github.com/eonica/FastTrack-ERC-4337-Experimental-Bundler-Deployment/)).
 
 ## (Optional) Configuration of Blockscout
 
